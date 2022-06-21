@@ -1,5 +1,5 @@
 const express = require('express')
-const router = express.Router()
+const router = new express.Router()
 
 // @desc    Login/Landing page
 // @route   GET /
@@ -14,7 +14,16 @@ router.get('/',(req, res)=>{
 // @route   GET /dashboard
 
 router.get('/dashboard',(req, res)=>{
-    res.render('Dashboard')
+    console.log("random ")
+    res.render('dashboard',{
+        layouts : 'dashboard'
+    })
+})
+
+router.get('/userlogin',async (req, res)=>{
+    res.render('userlogin',{
+        views:'something'
+    })
 })
 
 

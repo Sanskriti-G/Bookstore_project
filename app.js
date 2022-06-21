@@ -6,6 +6,7 @@ const dotenv = require('dotenv')
 const morgan = require('morgan')
 const exphbs = require('express-handlebars')
 const connectDB = require('./Config/db')
+const router = new express.Router()
 
 // Load config 
 dotenv.config({path: './Config/config.env'})
@@ -30,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 // Routes
-app.use('/dashboard', require('./routes/index'))
+// app.use('/dashboard', require('./routes/index'))
 app.use('/',require('./routes/index'))
 
 
